@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/demofile" name="demofile" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST" uri-template="/data">
+        <inSequence>
+            <property name="API_NAME" scope="default" type="STRING" value="writecsv"/>
+            <property expression="fn:concat('/storeinventory',$axis2:REST_URL_POSTFIX)" name="API_URL" scope="default" type="STRING"/>
+            <call-template target="LogTP">
+                <with-param name="apiNameField" value="readfile"/>
+                <with-param name="messageField" value="readfile Read csv file started"/>
+            </call-template>
+            <property expression="json-eval(filename)" name="filename" scope="default" type="STRING"/>
+            <file.checkExist configKey="FILE_CONNECTION_1">
+                <path>{$ctx:filename}</path>
+                <includeResultTo>Message Body</includeResultTo>
+            </file.checkExist>
+            <call-template target="LogTP">
+                <with-param name="apiNameField" value="readfile"/>
+                <with-param name="messageField" value="readfile checking for FileExist"/>
+            </call-template>
+            <filter regex="true" source="//checkExistResult/fileExists/text()">
+                <then>
+                    <property name="messagetype" scope="axis2" type="STRING" value="application/xml"/>
+                    <call-template target="LogTP">
+                        <with-param name="apiNameField" value="readfile"/>
+                        <with-param name="messageField" value="readfile reading csv File Started"/>
+                    </call-template>
+                    <file.read configKey="FILE_CONNECTION_1">
+                        <path>{$ctx:filename}</path>
+                        <filePattern>.*.csv</filePattern>
+                        <readMode>Complete File</readMode>
+                        <startLineNum>0</startLineNum>
+                        <endLineNum>0</endLineNum>
+                        <lineNum>0</lineNum>
+                        <contentType>text/plain</contentType>
+                        <includeResultTo>Message Body</includeResultTo>
+                        <enableStreaming>false</enableStreaming>
+                        <enableLock>false</enableLock>
+                    </file.read>
+                    <call-template target="LogTP">
+                        <with-param name="apiNameField" value="readfile"/>
+                        <with-param name="messageField" value="readfile reading csv File completed"/>
+                    </call-template>
+                    <call-template target="LogTP">
+                        <with-param name="apiNameField" value="readfile"/>
+                        <with-param name="messageField" value="readfile converting csv to xml Started"/>
+                    </call-template>
+                    <CSV.csvToXml>
+                        <headerPresent>Present</headerPresent>
+                        <skipHeader>true</skipHeader>
+                        <tagNames>Amount,Elementname,Level,Defaultvalue,Datatype,Fieldlength,Basis,AT,BE,CH,DE,DK,EE,ES,FI,FR,HU,IT,LT,NA,NL,NO-EL,NO-HVAC,PL,PT,RU,SE,SI,UK</tagNames>
+                        <rootElementTag>results</rootElementTag>
+                        <groupElementTag>result</groupElementTag>
+                    </CSV.csvToXml>
+                    <call-template target="LogTP">
+                        <with-param name="apiNameField" value="readfile"/>
+                        <with-param name="messageField" value="readfile converting csv to xml completed"/>
+                    </call-template>
+                    <datamapper config="gov:datamapper/NewConfig.dmc" inputSchema="gov:datamapper/NewConfig_inputSchema.json" inputType="XML" outputSchema="gov:datamapper/NewConfig_outputSchema.json" outputType="XML" xsltStyleSheet="gov:datamapper/NewConfig_xsltStyleSheet.xml"/>
+                    <property name="messageType" scope="axis2" type="STRING" value="application/json"/>
+                </then>
+                <else>
+                    <call-template target="LogTP">
+                        <with-param name="apiNameField" value="readfile"/>
+                        <with-param name="messageField" value="readfile file not found"/>
+                    </call-template>
+                    <payloadFactory media-type="json">
+                        <format>
+			{
+				"responseCode" : "1",
+				"responseMessage" : "file not found"
+			}
+		</format>
+                        <args/>
+                    </payloadFactory>
+                </else>
+            </filter>
+            <call-template target="LogTP">
+                <with-param name="apiNameField" value="readfile"/>
+                <with-param name="messageField" value="readfile process API Ended"/>
+            </call-template>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

@@ -1,0 +1,36 @@
+map_S_results_S_root = function(){ 
+var outputroot={};
+
+var count_i_result_93a8b10d_48f4_4c9e_9f7b_2af32400fcd9 = 0;
+outputroot =  {};
+outputroot.results =  {};
+outputroot.results.result =  [];
+
+for(i_result_93a8b10d_48f4_4c9e_9f7b_2af32400fcd9 in inputresults.result){
+outputroot.results.result[count_i_result_93a8b10d_48f4_4c9e_9f7b_2af32400fcd9] =  {};
+outputroot.results.result[count_i_result_93a8b10d_48f4_4c9e_9f7b_2af32400fcd9].Amount = Number(inputresults.result[i_result_93a8b10d_48f4_4c9e_9f7b_2af32400fcd9].Amount);
+outputroot.results.result[count_i_result_93a8b10d_48f4_4c9e_9f7b_2af32400fcd9].Ename = inputresults.result[i_result_93a8b10d_48f4_4c9e_9f7b_2af32400fcd9].Elementname;
+outputroot.results.result[count_i_result_93a8b10d_48f4_4c9e_9f7b_2af32400fcd9].Level = inputresults.result[i_result_93a8b10d_48f4_4c9e_9f7b_2af32400fcd9].Level;
+outputroot.results.result[count_i_result_93a8b10d_48f4_4c9e_9f7b_2af32400fcd9].Defaultvalue = inputresults.result[i_result_93a8b10d_48f4_4c9e_9f7b_2af32400fcd9].Defaultvalue;
+outputroot.results.result[count_i_result_93a8b10d_48f4_4c9e_9f7b_2af32400fcd9].Datatype = inputresults.result[i_result_93a8b10d_48f4_4c9e_9f7b_2af32400fcd9].Datatype;
+outputroot.results.result[count_i_result_93a8b10d_48f4_4c9e_9f7b_2af32400fcd9].Flength = (inputresults.result[i_result_93a8b10d_48f4_4c9e_9f7b_2af32400fcd9].Fieldlength).toString();
+outputroot.results.result[count_i_result_93a8b10d_48f4_4c9e_9f7b_2af32400fcd9].Basis = inputresults.result[i_result_93a8b10d_48f4_4c9e_9f7b_2af32400fcd9].Basis;
+outputroot.results.result[count_i_result_93a8b10d_48f4_4c9e_9f7b_2af32400fcd9].AT = inputresults.result[i_result_93a8b10d_48f4_4c9e_9f7b_2af32400fcd9].AT;
+outputroot.results.result[count_i_result_93a8b10d_48f4_4c9e_9f7b_2af32400fcd9].UK = inputresults.result[i_result_93a8b10d_48f4_4c9e_9f7b_2af32400fcd9].UK;
+
+count_i_result_93a8b10d_48f4_4c9e_9f7b_2af32400fcd9++;
+}
+return outputroot;
+};
+
+
+
+
+
+
+
+
+
+
+
+

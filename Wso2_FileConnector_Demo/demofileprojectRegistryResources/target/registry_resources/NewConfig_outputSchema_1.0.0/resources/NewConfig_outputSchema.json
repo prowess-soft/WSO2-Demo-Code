@@ -1,0 +1,61 @@
+{
+  "$schema" : "http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#",
+  "outputType" : "JSON",
+  "id" : "http://wso2jsonschema.org",
+  "title" : "root",
+  "type" : "object",
+  "properties" : {
+    "results" : {
+      "id" : "http://wso2jsonschema.org/results",
+      "type" : "object",
+      "properties" : {
+        "result" : {
+          "id" : "http://wso2jsonschema.org/results/result",
+          "type" : "array",
+          "items" : [ {
+            "id" : "http://wso2jsonschema.org/results/result/0",
+            "type" : "object",
+            "properties" : {
+              "Amount" : {
+                "id" : "http://wso2jsonschema.org/results/result/0/Amount",
+                "type" : "number"
+              },
+              "Ename" : {
+                "id" : "http://wso2jsonschema.org/results/result/0/Ename",
+                "type" : "string"
+              },
+              "Level" : {
+                "id" : "http://wso2jsonschema.org/results/result/0/Level",
+                "type" : "number"
+              },
+              "Defaultvalue" : {
+                "id" : "http://wso2jsonschema.org/results/result/0/Defaultvalue",
+                "type" : "string"
+              },
+              "Datatype" : {
+                "id" : "http://wso2jsonschema.org/results/result/0/Datatype",
+                "type" : "string"
+              },
+              "Flength" : {
+                "id" : "http://wso2jsonschema.org/results/result/0/Flength",
+                "type" : "string"
+              },
+              "Basis" : {
+                "id" : "http://wso2jsonschema.org/results/result/0/Basis",
+                "type" : "string"
+              },
+              "AT" : {
+                "id" : "http://wso2jsonschema.org/results/result/0/AT",
+                "type" : "string"
+              },
+              "UK" : {
+                "id" : "http://wso2jsonschema.org/results/result/0/UK",
+                "type" : "string"
+              }
+            }
+          } ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/jsontransform" name="jsontransform" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST" uri-template="/data">
+        <inSequence>
+            <property name="API_NAME" scope="default" type="STRING" value="jsontransform"/>
+            <property expression="fn:concat('/jsontransform',$axis2:REST_URL_POSTFIX)" name="API_URL" scope="default" type="STRING"/>
+            <property name="messageType" scope="axis2" type="STRING" value="application/json"/>
+            <call-template target="LogTP">
+                <with-param name="apiNameField" value="jsontransform"/>
+                <with-param name="messageField" value="jsontransform  Initiated"/>
+            </call-template>
+            <jsontransform schema="conf:myresources/NewResource.json"/>
+            <call-template target="LogTP">
+                <with-param name="apiNameField" value="jsontransform"/>
+                <with-param name="messageField" value="jsontransform  calling EP"/>
+            </call-template>
+            <enrich description="Save Payload">
+                <source clone="true" type="body"/>
+                <target property="payload" type="property"/>
+            </enrich>
+            <log level="full"/>
+            <send>
+                <endpoint>
+                    <http method="post" uri-template="https://petstore.swagger.io/v2/store/order">
+                        <suspendOnFailure>
+                            <initialDuration>-1</initialDuration>
+                            <progressionFactor>-1</progressionFactor>
+                            <maximumDuration>0</maximumDuration>
+                        </suspendOnFailure>
+                        <markForSuspension>
+                            <retriesBeforeSuspension>0</retriesBeforeSuspension>
+                        </markForSuspension>
+                    </http>
+                </endpoint>
+            </send>
+        </inSequence>
+        <outSequence>
+            <filter regex="200" source="$axis2:HTTP_SC">
+                <then>
+                    <payloadFactory media-type="json">
+                        <format>{
+									"id": $1,
+									"petId": $2,
+									"quantity": $3,
+									"complete": $4,
+									"responsecode": "0",
+									"responsemessage": "success"
+								}
+                            </format>
+                        <args>
+                            <arg evaluator="json" expression="$.id"/>
+                            <arg evaluator="json" expression="$.petId"/>
+                            <arg evaluator="json" expression="$.quantity"/>
+                            <arg evaluator="json" expression="$.complete"/>
+                        </args>
+                    </payloadFactory>
+                </then>
+                <else>
+                    <payloadFactory media-type="json">
+                        <format>{
+                               "responsecode": "1",
+                            	"responsemessage":"error"
+                            	}</format>
+                        <args/>
+                    </payloadFactory>
+                </else>
+            </filter>
+            <respond/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+</api>
