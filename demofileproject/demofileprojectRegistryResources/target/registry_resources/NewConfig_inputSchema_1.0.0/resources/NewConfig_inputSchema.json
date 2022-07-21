@@ -1,0 +1,135 @@
+{
+  "$schema" : "http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#",
+  "inputType" : "XML",
+  "id" : "http://wso2jsonschema.org",
+  "title" : "results",
+  "type" : "object",
+  "properties" : {
+    "result" : {
+      "id" : "http://wso2jsonschema.org/result",
+      "type" : "array",
+      "items" : [ {
+        "id" : "http://wso2jsonschema.org/result/0",
+        "type" : "object",
+        "properties" : {
+          "Amount" : {
+            "id" : "http://wso2jsonschema.org/result/0/Amount",
+            "type" : "string"
+          },
+          "Elementname" : {
+            "id" : "http://wso2jsonschema.org/result/0/Elementname",
+            "type" : "string"
+          },
+          "Level" : {
+            "id" : "http://wso2jsonschema.org/result/0/Level",
+            "type" : "number"
+          },
+          "Defaultvalue" : {
+            "id" : "http://wso2jsonschema.org/result/0/Defaultvalue",
+            "type" : "string"
+          },
+          "Datatype" : {
+            "id" : "http://wso2jsonschema.org/result/0/Datatype",
+            "type" : "string"
+          },
+          "Fieldlength" : {
+            "id" : "http://wso2jsonschema.org/result/0/Fieldlength",
+            "type" : "number"
+          },
+          "Basis" : {
+            "id" : "http://wso2jsonschema.org/result/0/Basis",
+            "type" : "string"
+          },
+          "AT" : {
+            "id" : "http://wso2jsonschema.org/result/0/AT",
+            "type" : "string"
+          },
+          "BE" : {
+            "id" : "http://wso2jsonschema.org/result/0/BE",
+            "type" : "string"
+          },
+          "CH" : {
+            "id" : "http://wso2jsonschema.org/result/0/CH",
+            "type" : "string"
+          },
+          "DE" : {
+            "id" : "http://wso2jsonschema.org/result/0/DE",
+            "type" : "string"
+          },
+          "DK" : {
+            "id" : "http://wso2jsonschema.org/result/0/DK",
+            "type" : "string"
+          },
+          "EE" : {
+            "id" : "http://wso2jsonschema.org/result/0/EE",
+            "type" : "string"
+          },
+          "ES" : {
+            "id" : "http://wso2jsonschema.org/result/0/ES",
+            "type" : "string"
+          },
+          "FI" : {
+            "id" : "http://wso2jsonschema.org/result/0/FI",
+            "type" : "string"
+          },
+          "FR" : {
+            "id" : "http://wso2jsonschema.org/result/0/FR",
+            "type" : "string"
+          },
+          "HU" : {
+            "id" : "http://wso2jsonschema.org/result/0/HU",
+            "type" : "string"
+          },
+          "IT" : {
+            "id" : "http://wso2jsonschema.org/result/0/IT",
+            "type" : "string"
+          },
+          "LT" : {
+            "id" : "http://wso2jsonschema.org/result/0/LT",
+            "type" : "string"
+          },
+          "NA" : {
+            "id" : "http://wso2jsonschema.org/result/0/NA",
+            "type" : "string"
+          },
+          "NL" : {
+            "id" : "http://wso2jsonschema.org/result/0/NL",
+            "type" : "string"
+          },
+          "NO-EL" : {
+            "id" : "http://wso2jsonschema.org/result/0/NO-EL",
+            "type" : "string"
+          },
+          "NO-HVAC" : {
+            "id" : "http://wso2jsonschema.org/result/0/NO-HVAC",
+            "type" : "string"
+          },
+          "PL" : {
+            "id" : "http://wso2jsonschema.org/result/0/PL",
+            "type" : "string"
+          },
+          "PT" : {
+            "id" : "http://wso2jsonschema.org/result/0/PT",
+            "type" : "string"
+          },
+          "RU" : {
+            "id" : "http://wso2jsonschema.org/result/0/RU",
+            "type" : "string"
+          },
+          "SE" : {
+            "id" : "http://wso2jsonschema.org/result/0/SE",
+            "type" : "string"
+          },
+          "SI" : {
+            "id" : "http://wso2jsonschema.org/result/0/SI",
+            "type" : "string"
+          },
+          "UK" : {
+            "id" : "http://wso2jsonschema.org/result/0/UK",
+            "type" : "string"
+          }
+        }
+      } ]
+    }
+  }
+}

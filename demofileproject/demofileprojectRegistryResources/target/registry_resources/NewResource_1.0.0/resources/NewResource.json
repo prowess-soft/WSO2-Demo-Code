@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "petId": {
+      "type": "string"
+    },
+    "quantity": {
+      "type": "string"
+    },
+    "shipDate": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "complete": {
+      "type": "boolean"
+    }
+  }
+}

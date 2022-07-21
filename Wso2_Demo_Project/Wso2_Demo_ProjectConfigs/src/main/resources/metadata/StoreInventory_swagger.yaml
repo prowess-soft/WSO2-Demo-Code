@@ -1,0 +1,13 @@
+openapi: 3.0.1
+info:
+  title: StoreInventory
+  description: API Definition of StoreInventory
+  version: 1.0.0
+servers:
+- url: http://localhost:8290/storeinventory
+paths:
+  /inventory:
+    get:
+      responses:
+        default:
+          description: Default response

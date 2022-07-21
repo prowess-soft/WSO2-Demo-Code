@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="GenericErrorHandlerSQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/GenericErrorHandlerSQ.xml</file>
+    </artifact>
+    <artifact name="LogTP" groupId="com.example.template" version="1.0.0" type="synapse/sequenceTemplate" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/templates/LogTP.xml</file>
+    </artifact>
+    <artifact name="MandatoryParameterCheck" groupId="com.example.template" version="1.0.0" type="synapse/sequenceTemplate" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/templates/MandatoryParameterCheck.xml</file>
+    </artifact>
+    <artifact name="storemanagement" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/storemanagement.xml</file>
+    </artifact>
+    <artifact name="storemanagement_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/storemanagement_swagger.yaml</file>
+    </artifact>
+    <artifact name="storemanagement_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/storemanagement_metadata.yaml</file>
+    </artifact>
+    <artifact name="StoreInventory" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/StoreInventory.xml</file>
+    </artifact>
+    <artifact name="StoreInventory_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/StoreInventory_swagger.yaml</file>
+    </artifact>
+    <artifact name="StoreInventory_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/StoreInventory_metadata.yaml</file>
+    </artifact>
+    <artifact name="DeleteStoreOrder" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/DeleteStoreOrder.xml</file>
+    </artifact>
+    <artifact name="DeleteStoreOrder_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/DeleteStoreOrder_swagger.yaml</file>
+    </artifact>
+    <artifact name="DeleteStoreOrder_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/DeleteStoreOrder_metadata.yaml</file>
+    </artifact>
+</artifacts>

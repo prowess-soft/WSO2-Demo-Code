@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="writecsv" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/writecsv.xml</file>
+    </artifact>
+    <artifact name="writecsv_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/writecsv_swagger.yaml</file>
+    </artifact>
+    <artifact name="writecsv_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/writecsv_metadata.yaml</file>
+    </artifact>
+    <artifact name="LogTP" groupId="com.example.template" version="1.0.0" type="synapse/sequenceTemplate" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/templates/LogTP.xml</file>
+    </artifact>
+    <artifact name="FILE_CONNECTION_1" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>\src\main\synapse-config\local-entries\FILE_CONNECTION_1.xml</file>
+    </artifact>
+    <artifact name="demofile" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/demofile.xml</file>
+    </artifact>
+    <artifact name="demofile_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/demofile_swagger.yaml</file>
+    </artifact>
+    <artifact name="demofile_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/demofile_metadata.yaml</file>
+    </artifact>
+    <artifact name="jsontransform" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/jsontransform.xml</file>
+    </artifact>
+    <artifact name="jsontransform_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/jsontransform_swagger.yaml</file>
+    </artifact>
+    <artifact name="jsontransform_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/jsontransform_metadata.yaml</file>
+    </artifact>
+    <artifact name="SEQ_CreateStudentByMessage" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/SEQ_CreateStudentByMessage.xml</file>
+    </artifact>
+    <artifact name="StockQuoteServiceEp" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/StockQuoteServiceEp.xml</file>
+    </artifact>
+</artifacts>

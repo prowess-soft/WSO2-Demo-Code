@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="GenericErrorHandlerSQ" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <property expression="json-eval($.code)" name="responseCode" scope="default" type="STRING"/>
+    <property expression="json-eval($.message)" name="responseMessage" scope="default" type="STRING"/>
+    <payloadFactory media-type="json">
+        <format>
+			{
+				"responseCode" : "$1",
+				"responseMessage" : "$2"
+			}
+		</format>
+        <args>
+            <arg evaluator="xml" expression="get-property('responseCode')"/>
+            <arg evaluator="xml" expression="get-property('responseMessage')"/>
+        </args>
+    </payloadFactory>
+    <call-template description="WARN Log" target="LogTP">
+        <with-param name="responseCode" value="get-property('responseCode')"/>
+        <with-param name="responseMessage" value="get-property('responseMessage')"/>
+    </call-template>
+    <respond/>
+</sequence>

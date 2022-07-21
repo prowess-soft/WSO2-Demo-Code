@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/writecsv" name="writecsv" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST" uri-template="/data">
+        <inSequence>
+            <property name="API_NAME" scope="default" type="STRING" value="writecsv"/>
+            <property expression="fn:concat('/writecsv',$axis2:REST_URL_POSTFIX)" name="API_URL" scope="default" type="STRING"/>
+            <call-template target="LogTP">
+                <with-param name="apiNameField" value="writecsv"/>
+                <with-param name="messageField" value="writecsv  Initiated"/>
+            </call-template>
+            <property name="messagetype" scope="axis2" type="STRING" value="application/xml"/>
+            <call-template target="LogTP">
+                <with-param name="apiNameField" value="writecsv"/>
+                <with-param name="messageField" value="writecsv xml to csv Started"/>
+            </call-template>
+            <CSV.xmlToCsv/>
+            <call-template target="LogTP">
+                <with-param name="apiNameField" value="writecsv"/>
+                <with-param name="messageField" value="writecsv xml to csv complete"/>
+            </call-template>
+            <call-template target="LogTP">
+                <with-param name="apiNameField" value="writecsv"/>
+                <with-param name="messageField" value="writecsv Write csv file Started"/>
+            </call-template>
+            <file.write configKey="FILE_CONNECTION_1">
+                <filePath>file/sample_data2.csv</filePath>
+                <mimeType>Automatic</mimeType>
+                <compress>false</compress>
+                <writeMode>Overwrite</writeMode>
+                <enableStreaming>false</enableStreaming>
+                <appendNewLine>false</appendNewLine>
+                <enableLock>false</enableLock>
+                <includeResultTo>Message Body</includeResultTo>
+                <updateLastModified>true</updateLastModified>
+            </file.write>
+            <call-template target="LogTP">
+                <with-param name="apiNameField" value="writecsv"/>
+                <with-param name="messageField" value="writecsv writing to csv file completed"/>
+            </call-template>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>
