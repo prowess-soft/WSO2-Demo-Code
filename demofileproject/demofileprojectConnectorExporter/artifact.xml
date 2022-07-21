@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><artifacts>
-    <artifact name="CSV-connector" groupId="com.example.lib" version="1.0.3" type="synapse/lib" serverRole="EnterpriseServiceBus">
-        <file>CSV-connector-1.0.3.zip</file>
-    </artifact>
-    <artifact name="file-connector" groupId="com.example.lib" version="4.0.9" type="synapse/lib" serverRole="EnterpriseServiceBus">
-        <file>file-connector-4.0.9.zip</file>
-    </artifact>
-</artifacts>
